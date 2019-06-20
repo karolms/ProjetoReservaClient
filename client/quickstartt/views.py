@@ -25,13 +25,13 @@ class GroupViewSet(viewsets.ModelViewSet):
 
 
 def envia_dados_pro_arduino(dados_string):
-    #init serial port and bound
+        #init serial port and bound
     # bound rate on two ports must be the same
-    ser = serial.Serial('/dev/ttyS2', 9600)
-    print(ser.portstr)
-
-    #send data via serial port
-    ser.write(dados_string)
+    ser = serial.Serial('COM3', 9600)
+    p = 0
+    while p == 0:
+    	ser.readline()
+    	p += 1
     ser.close()
 
 
